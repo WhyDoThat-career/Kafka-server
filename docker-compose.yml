@@ -15,6 +15,7 @@ services:
   kafka :
     container_name: kafka-keyog
     image: wurstmeister/kafka:2.12-2.3.0
+    restart: always
     depends_on:
       - zoo1
       # - zoo2
