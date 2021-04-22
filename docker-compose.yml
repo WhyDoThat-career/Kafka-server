@@ -8,7 +8,8 @@ services:
     hostname: zookeeper-leader
     ports:
       - 2181:2181
-    # environment:
+    environment:
+      TZ: "Asia/Seoul"
       # ZOO_MY_ID: 1
       # ZOO_TICK_TIME:2000
       # ZOO_INIT_LIMIT: 5
@@ -33,6 +34,7 @@ services:
       KAFKA_HEAP_OPTS: "-Xmx500M -Xms500M"
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://52.78.62.228:9092
+      TZ: "Asia/Seoul"
 
   # zoo2:
   #   container_name: zookeeper-follower1
