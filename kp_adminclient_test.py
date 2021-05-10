@@ -2,12 +2,12 @@ from kafka.admin import KafkaAdminClient, NewTopic
 
 
 admin_client = KafkaAdminClient(
-    bootstrap_servers="52.78.62.228:9092", 
+    bootstrap_servers="localhost:9092", 
     client_id='test'
 )
 
 topic = NewTopic(
-    name='test_topic2',
+    name='flask_all_logs',
     num_partitions=1,
     replication_factor=1 
 )

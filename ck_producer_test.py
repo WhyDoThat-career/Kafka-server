@@ -1,7 +1,7 @@
 from confluent_kafka import Producer
 
 
-p = Producer({'bootstrap.servers': '52.78.62.228:9092'})
+p = Producer({'bootstrap.servers': 'localhost:9092'})
 
 def delivery_report(err, msg):
     """ Called once for each message produced to indicate delivery result.

@@ -1,12 +1,12 @@
 from kafka import KafkaConsumer 
 from json import loads 
 # topic, broker list 
-consumer = KafkaConsumer('test_topic', 
-                         bootstrap_servers=['52.78.62.228:9092'],
+consumer = KafkaConsumer('flask_all_logs', 
+                         bootstrap_servers=['localhost:9092'],
                          auto_offset_reset='earliest',
                          enable_auto_commit=True,
                          group_id='my-group',
-                         )#value_deserializer=lambda x: loads(x.decode('utf-8')), consumer_timeout_ms=1000 ) 
+                         value_deserializer=lambda x: loads(x.decode('utf-8')))#, consumer_timeout_ms=1000 ) 
 # consumer list를 가져온다 
 print('[begin] get consumer list') 
 for message in consumer: 
